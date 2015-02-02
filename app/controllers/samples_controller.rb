@@ -2,7 +2,10 @@ class SamplesController < ApplicationController
   before_action :set_sample, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
-
+  def home
+    @samples = Sample.all
+  end
+  
   def index
     @samples = Sample.all
     respond_with(@samples)

@@ -1,6 +1,8 @@
-<p id="notice"><%= notice %></p>
 
-<div class="row ">
+  
+    <% @samples.each do |sample| %>
+        
+            <div class="row top">
               
               <div class="col-md-1">
                    <strong>Line</strong>
@@ -27,44 +29,56 @@
                 <div class="col-md-1">
                    <strong>Location</strong>
                 </div>
-                <div class="col-md-2">
-  </div>
+                 <div class="col-md-1">
+                 </div>
               </div><!-- Top Row-->
               <div class="row"> 
 
                 
                 <div class="col-md-1">
-                  <%= @sample.line %>
+                  <%= sample.line %>
                 </div>
           
                 <div class="col-md-1">
-                  <%= @sample.season %>
+                  <%= sample.season %>
                 </div>
                 <div class="col-md-1">
-                  <%= @sample.style %>
+                  <%= sample.style %>
                 </div>
         
                 <div class="col-md-1">
-                  <%= @sample.color%>
+                  <%= sample.color%>
                 </div>
 
                 <div class="col-md-2">
-                  <%= @sample.date_out %>
+                  <%= sample.date_out %>
                 </div>
              
                 <div class="col-md-1">
-                  <%= @sample.to_who %>
+                  <%= sample.to_who %>
                 </div>
 
                 <div class="col-md-2">
-                  <%= @sample.date_in %>
+                  <%= sample.date_in %>
                 </div>
                 <div class="col-md-1">
-                  <%= @sample.location %>
+                  <%= sample.location %>
                 </div>
                 
- <div class="col-md-2">           
-<%= link_to 'Edit', edit_sample_path(@sample), class: "btn btn-xs btn-default"  %>
-<%= link_to 'Back', samples_path, class: "btn btn-xs btn-default"  %>
-</div>
+            
+                
+
+                <div class="col-md-2">
+                 <%= link_to 'View', sample,  class: "btn btn-sm btn-default" %> 
+
+                 <%= link_to 'Edit', edit_sample_path(sample), class: "btn btn-sm btn-default"  %>
+                </div>
+               
+              
+        <% end %>
+        
+
+
+
+
 
