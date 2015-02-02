@@ -19,3 +19,6 @@
 .sample {
 	border-top: 1px solid;
 }
+.bottom {
+	padding-bottom:10px;
+}
