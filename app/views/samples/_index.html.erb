@@ -1,50 +1,56 @@
-<% @samples.each do |sample| %>
 
-              <div class="row"> 
+
+          
+    <% @samples.each do |sample| %>
+
+              <div class="row sample"> 
                 
-                <div class="col-md-1">
+                <div class="col-md-4">
                   <strong>Line</strong>
                   <%= sample.line %>
                 </div>
           
-                <div class="col-md-1">
+                <div class="col-md-4">
                   <strong>Season</strong>
                   <%= sample.season %>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-4">
                    <strong>Style</strong>
                   <%= sample.style %>
                 </div>
-        
-                <div class="col-md-1">
+              </div>
+              <div class="row"> 
+                <div class="col-md-4">
                    <strong>Color</strong>
                   <%= sample.color%>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-md-4">
                    <strong>Date Out</strong>
                   <%= sample.date_out %>
                 </div>
              
-                <div class="col-md-1">
+                <div class="col-md-4">
                    <strong>To Who</strong>
                   <%= sample.to_who %>
                 </div>
-
-                <div class="col-md-2">
+              </div>
+              <div class="row"> 
+                <div class="col-md-4">
                    <strong>Date In</strong>
                   <%= sample.date_in %>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-4">
                    <strong>Location</strong>
                   <%= sample.location %>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-md-4">
                  <%= link_to 'View', sample,  class: "btn btn-sm btn-default" %> 
 
                  <%= link_to 'Edit', edit_sample_path(sample), class: "btn btn-sm btn-default"  %>
                 </div>
+              </div>
                
               
         <% end %>
