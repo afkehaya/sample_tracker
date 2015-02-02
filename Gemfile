@@ -25,6 +25,9 @@ gem 'bootstrap-sass'
 # devise for users
 gem 'devise'
 
+#admin panel for managing users
+gem 'activeadmin', github: 'activeadmin'
+
 #Pundit for Authorizations
 gem "pundit"
 
