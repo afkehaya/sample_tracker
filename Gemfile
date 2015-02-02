@@ -25,6 +25,9 @@ gem 'bootstrap-sass'
 # devise for users
 gem 'devise'
 
+#Pundit for Authorizations
+gem "pundit"
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
@@ -34,6 +37,7 @@ gem 'spring',        group: :development
 group :development, :test do
      gem 'sqlite3'
 end
+
 group :production do
      gem 'pg'
      gem 'rails_12factor'

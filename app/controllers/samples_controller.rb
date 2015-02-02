@@ -1,14 +1,19 @@
 class SamplesController < ApplicationController
   before_action :set_sample, only: [:show, :edit, :update, :destroy]
+  after_action :verify_authorized
 
   respond_to :html
   def home
     @samples = Sample.all
+    authorize @samples 
+  end
+  def admin_only
   end
   
   def index
     @samples = Sample.all
     respond_with(@samples)
+    authorize @samples
   end
 
   def show
@@ -18,6 +23,7 @@ class SamplesController < ApplicationController
   def new
     @sample = Sample.new
     respond_with(@sample)
+    authorize @sample
   end
 
   def edit
@@ -25,6 +31,7 @@ class SamplesController < ApplicationController
 
    def create
     @sample = Sample.new(sample_params)
+   
     if @sample.save
       redirect_to @sample, notice: 'Sample was successfully created.'
     else
@@ -49,6 +56,7 @@ class SamplesController < ApplicationController
   private
     def set_sample
       @sample = Sample.find(params[:id])
+       authorize @sample
     end
 
     def sample_params
