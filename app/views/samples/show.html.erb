@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Line:</strong>
+  <%= @sample.line %>
+</p>
+
+<p>
+  <strong>Season:</strong>
+  <%= @sample.season %>
+</p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @sample.style %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @sample.color %>
+</p>
+
+<p>
+  <strong>Date out:</strong>
+  <%= @sample.date_out %>
+</p>
+
+<p>
+  <strong>To who:</strong>
+  <%= @sample.to_who %>
+</p>
+
+<p>
+  <strong>Date in:</strong>
+  <%= @sample.date_in %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @sample.location %>
+</p>
+
+<%= link_to 'Edit', edit_sample_path(@sample) %> |
+<%= link_to 'Back', samples_path %>

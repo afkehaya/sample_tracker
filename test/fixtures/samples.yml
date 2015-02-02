@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  line: MyString
+  season: MyString
+  style: MyString
+  color: MyString
+  date_out: 2015-02-02 11:25:48
+  to_who: MyString
+  date_in: 2015-02-02 11:25:48
+  location: MyString
+
+two:
+  line: MyString
+  season: MyString
+  style: MyString
+  color: MyString
+  date_out: 2015-02-02 11:25:48
+  to_who: MyString
+  date_in: 2015-02-02 11:25:48
+  location: MyString
