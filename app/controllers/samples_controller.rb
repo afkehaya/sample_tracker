@@ -32,7 +32,7 @@ class SamplesController < ApplicationController
 
    def create
     @sample = Sample.new(sample_params)
-   
+    authorize @sample
     if @sample.save
       redirect_to @sample, notice: 'Sample was successfully created.'
     else
