@@ -11,7 +11,8 @@ class SamplesController < ApplicationController
   end
   
   def index
-    @samples = Sample.all
+    @q = Sample.search(params[:q])
+    @samples = @q.result(distinct: true)
     respond_with(@samples)
     authorize @samples
   end

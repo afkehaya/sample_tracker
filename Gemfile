@@ -28,6 +28,9 @@ gem 'devise'
 #admin panel for managing users
 gem 'activeadmin', github: 'activeadmin'
 
+#Ransack for search function and filtering.
+gem 'ransack', github: 'activerecord-hackery/ransack'
+
 #Pundit for Authorizations
 gem "pundit"
 

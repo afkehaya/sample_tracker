@@ -6,4 +6,9 @@ class ApplicationController < ActionController::Base
   include Pundit
 
   after_action :verify_authorized, unless: :devise_controller?
+  before_filter :set_global_search_variable
+
+ def set_global_search_variable
+   @q = Sample.search(params[:q])
+ end
 end
