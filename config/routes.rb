@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :samples 
+  resources :samples do 
+    collection {post :import}
+  end
 
   devise_for :users
   root "samples#index"

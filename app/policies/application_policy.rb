@@ -25,7 +25,9 @@ class ApplicationPolicy
   def update?
     false
   end
-
+  def import?
+    false
+  end
   def edit?
     update?
   end

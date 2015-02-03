@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.0'
 # Bootstrap
 gem 'bootstrap-sass'
 
+gem 'annotate'
 # devise for users
 gem 'devise'
 
