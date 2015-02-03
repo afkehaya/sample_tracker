@@ -12,7 +12,7 @@ class SamplesController < ApplicationController
   
   def index
     @q = Sample.search(params[:q])
-    @samples = @q.result(distinct: true)
+    @samples = @q.result(distinct: true).order("created_at DESC").paginate(:page => params[:page], :per_page => 10 )
     respond_with(@samples)
     authorize @samples
   end

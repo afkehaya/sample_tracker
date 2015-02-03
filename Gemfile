@@ -31,6 +31,11 @@ gem 'activeadmin', github: 'activeadmin'
 #Ransack for search function and filtering.
 gem 'ransack', github: 'activerecord-hackery/ransack'
 
+# pagination
+gem 'will_paginate', '~> 3.0.5'
+
+gem 'will_paginate-bootstrap'
+
 #Pundit for Authorizations
 gem "pundit"
 

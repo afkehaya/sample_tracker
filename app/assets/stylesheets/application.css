@@ -25,3 +25,7 @@
 .searchform {
 	margin-bottom: 1%;
 }
+.pagination-top {
+	margin-top: -6%;
+	clear: right;
+}

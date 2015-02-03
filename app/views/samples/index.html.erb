@@ -1,12 +1,19 @@
  
 <%= render "home" %>
+
 <div class="container">
- <div class="searchform">
-  <%= search_form_for @q, html: {class: "form-inline search"} do |f| %>
-  <%= f.search_field :line_or_season_or_style_or_color_cont, placeholder: "Search...", class: "form-control" %>
-  <% end %>
+	 <div class="searchform">
+	  <%= search_form_for @q, html: {class: "form-inline search"} do |f| %>
+	  <%= f.search_field :line_or_season_or_style_or_color_cont, placeholder: "Search...", class: "form-control" %>
+	  <% end %>
+	 </div>
+
+  <div class="pull-right pagination-top">
+	  <%= will_paginate @samples, renderer: BootstrapPagination::Rails %>
+  </div>
 </div>
-   
+
+  <div class="container">
     <% @samples.each do |sample| %>
 
               <div class="row sample"> 
@@ -56,7 +63,11 @@
                 </div>
               </div>
         <% end %>
-    </div>
+	
+	<div class="pull-right">
+		<%= will_paginate @samples, renderer: BootstrapPagination::Rails %>
+	</div>
+</div>
         
 
 
