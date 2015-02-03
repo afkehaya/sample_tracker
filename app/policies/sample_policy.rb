@@ -17,6 +17,7 @@ class SamplePolicy < ApplicationPolicy
 		return true if user.present? && user.admin?
 	end
 	def new
+		create?
 	end
 
 	def delete?

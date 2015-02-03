@@ -3,6 +3,7 @@
      <% if user_signed_in? %>
       <% if policy(Sample).new? %>
            <%= link_to "Check In A New Sample", new_sample_path, class: "btn btn-primary btn-lg" %>
+<% end %>
            <% end %>
        </div>
      <% else %>
