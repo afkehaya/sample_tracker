@@ -2,6 +2,7 @@ ActiveAdmin.register AdminUser do
   permit_params :email, :password, :password_confirmation
     controller do
         skip_after_action :verify_authorized
+        skip_before_action :set_global_search_variable
 
     end
 

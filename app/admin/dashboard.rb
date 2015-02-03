@@ -1,7 +1,7 @@
 ActiveAdmin.register_page "Dashboard" do
 controller do
       skip_after_action :verify_authorized
-
+      skip_before_action :set_global_search_variable
 end
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 

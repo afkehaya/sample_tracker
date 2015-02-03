@@ -2,7 +2,7 @@ ActiveAdmin.register User do
 menu priority: 2
 controller do
       skip_after_action :verify_authorized
-
+      skip_before_action :set_global_search_variable
 
   def permitted_params
     params.permit user: [:name, :email, :role, :school_id]

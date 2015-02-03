@@ -1,9 +1,12 @@
+ 
+<%= render "home" %>
+<div class="container">
  <div class="searchform">
   <%= search_form_for @q, html: {class: "form-inline search"} do |f| %>
-  <%= f.search_field :line_cont, placeholder: "Search...", class: "form-control" %>
+  <%= f.search_field :line_or_season_or_style_or_color_cont, placeholder: "Search...", class: "form-control" %>
   <% end %>
 </div>
-          
+   
     <% @samples.each do |sample| %>
 
               <div class="row sample"> 
@@ -52,9 +55,8 @@
                  <%= link_to 'Check In | Out', edit_sample_path(sample), class: "btn btn-md btn-default"  %>
                 </div>
               </div>
-               
-              
         <% end %>
+    </div>
         
 
 
