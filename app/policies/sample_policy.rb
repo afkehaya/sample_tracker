@@ -1,10 +1,7 @@
 class SamplePolicy < ApplicationPolicy
 	def index?
 		true
-	end
-	def home?
-		true
-	end
+	end 
 	
 	def update?
 		user.present? 
@@ -21,7 +18,7 @@ class SamplePolicy < ApplicationPolicy
 	end
 
 	def delete?
-		user.present? && user.admin?
+		false
 	end
 
 

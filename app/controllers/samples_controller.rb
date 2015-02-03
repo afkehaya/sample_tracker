@@ -51,6 +51,7 @@ class SamplesController < ApplicationController
 
   def destroy
     @sample.destroy
+    authorize @sample
     respond_with(@sample)
   end
 
