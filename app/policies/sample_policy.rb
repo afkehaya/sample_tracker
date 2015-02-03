@@ -22,7 +22,7 @@ class SamplePolicy < ApplicationPolicy
 	end
 
 	def import?
-		return true if user.present? && user.admin?
+		true 
 	end
 
 	private

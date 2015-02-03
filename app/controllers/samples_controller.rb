@@ -18,9 +18,10 @@ class SamplesController < ApplicationController
   end
 
   def import
+    @samples = Sample.all
     Sample.import(params[:file])
     redirect_to root_url, notice: "Samples Imported"
-    authorize @sample
+    authorize @samples
   end
 
   def show
