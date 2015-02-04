@@ -1,4 +1,5 @@
  
+<% if user_signed_in? %>
 <%= render "home" %>
 
 <div class="container">
@@ -69,7 +70,10 @@
 	</div>
 </div>
         
+<% else %>
 
+<%= render "home" %>
+<% end %>
 
 
 
