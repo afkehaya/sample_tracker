@@ -26,6 +26,9 @@ gem 'annotate'
 # devise for users
 gem 'devise'
 
+# UTF-8 Cleaner for uploading CSV files
+gem 'utf8-cleaner'
+
 #admin panel for managing users
 gem 'activeadmin', github: 'activeadmin'
 
