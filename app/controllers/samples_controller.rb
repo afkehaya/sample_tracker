@@ -19,8 +19,12 @@ class SamplesController < ApplicationController
 
   def import
     @samples = Sample.all
+    if params[:file].present?
     Sample.import(params[:file])
     redirect_to root_url, notice: "Samples Imported"
+    else
+    redirect_to root_url, notice: "You need to choose a file first!"
+    end
     authorize @samples
   end
 
