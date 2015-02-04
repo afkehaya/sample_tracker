@@ -37,7 +37,7 @@ class SamplesController < ApplicationController
   def edit
   end
 
-   def create
+  def create
     @sample = Sample.new(sample_params)
     authorize @sample
     if @sample.save
