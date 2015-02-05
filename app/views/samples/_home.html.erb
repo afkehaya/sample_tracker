@@ -2,12 +2,15 @@
      <h1>Keep Track. Save Time.</h1>
      <% if user_signed_in? %>
       <% if policy(Sample).new? %>
+
            <%= link_to "Check In A New Sample", new_sample_path, class: "btn btn-primary btn-lg" %>
+            <%= link_to "My Samples", mysample_path, class: "btn btn-default btn-lg" %>
 
 
            <br></br>
           <%= form_tag import_samples_path, multipart: true do %>
             <%= submit_tag "Import Samples", class: "btn btn-warning btn-lg" %>
+
             <br></br>
 
              <%= file_field_tag :file %>

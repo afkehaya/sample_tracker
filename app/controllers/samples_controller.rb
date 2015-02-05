@@ -7,6 +7,7 @@ class SamplesController < ApplicationController
     @samples = Sample.all
     authorize @samples 
   end
+
   def admin_only
   end
   
@@ -14,6 +15,11 @@ class SamplesController < ApplicationController
     @q = Sample.search(params[:q])
     @samples = @q.result(distinct: true).order("created_at DESC").paginate(:page => params[:page], :per_page => 10 )
     respond_with(@samples)
+    authorize @samples
+  end
+
+  def mysample
+    @samples = Sample.all.order("created_at DESC")
     authorize @samples
   end
 
