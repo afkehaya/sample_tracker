@@ -1,4 +1,5 @@
 ActiveAdmin.register_page "Dashboard" do
+  
 controller do
       skip_after_action :verify_authorized
       skip_before_action :set_global_search_variable
