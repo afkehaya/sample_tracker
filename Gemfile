@@ -26,6 +26,9 @@ gem 'annotate'
 # devise for users
 gem 'devise'
 
+# bye bug for debugging
+gem 'byebug'
+
 # UTF-8 Cleaner for uploading CSV files
 gem 'utf8-cleaner'
 

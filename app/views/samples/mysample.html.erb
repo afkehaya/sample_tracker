@@ -12,8 +12,8 @@
    
  <div class="container">
 
-    <% @current_user.samples.each do |sample| %>
-		
+    <% @samples.each do |sample| %>
+		<% if sample.user == current_user %>
               <div class="row sample"> 
                
                 <div class="col-md-4">
@@ -60,5 +60,8 @@
                  <%= link_to 'Check In | Out', edit_sample_path(sample), class: "btn btn-md btn-default"  %>
                 </div>
               </div>
+              <% end %>
         	<% end %>
+         
+
 </div>

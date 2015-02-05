@@ -19,14 +19,14 @@ class SamplesController < ApplicationController
   end
 
   def mysample
-    @samples = Sample.all.order("created_at DESC")
+    @samples = Sample.all
     authorize @samples
   end
 
   def import
     @samples = Sample.all
     if params[:file].present?
-    Sample.import(params[:file])
+    Sample.import(params[:file], params[:user_id])
     redirect_to root_url, notice: "Samples Imported"
     else
     redirect_to root_url, notice: "You need to choose a file first!"
@@ -48,6 +48,7 @@ class SamplesController < ApplicationController
   end
 
   def create
+    params[:sample][:user_id] = current_user.id
     @sample = Sample.new(sample_params)
     authorize @sample
     if @sample.save
@@ -79,6 +80,6 @@ class SamplesController < ApplicationController
     end
 
     def sample_params
-      params.require(:sample).permit(:line, :season, :style, :color, :date_out, :to_who, :date_in, :location)
+      params.require(:sample).permit(:line, :season, :style, :color, :date_out, :to_who, :date_in, :location,:user_id)
     end
 end
