@@ -9,7 +9,8 @@
 
 </div>
 
-   
+  <h2> <%= @current_user.name %>'s samples</h2>
+  <strong><%= @current_user.email %></strong>
  <div class="container">
 
     <% @samples.each do |sample| %>
