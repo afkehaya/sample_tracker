@@ -26,7 +26,7 @@ class SamplesController < ApplicationController
   def import
     @samples = Sample.all
     if params[:file].present?
-    Sample.import(params[:file], params[:user_id])
+    Sample.import(params[:file], current_user.id)
     redirect_to root_url, notice: "Samples Imported"
     else
     redirect_to root_url, notice: "You need to choose a file first!"
@@ -52,7 +52,7 @@ class SamplesController < ApplicationController
     @sample = Sample.new(sample_params)
     authorize @sample
     if @sample.save
-      redirect_to @sample, notice: 'Sample was successfully created.'
+      redirect_to mysample_url, notice: 'Sample was successfully created.'
     else
       render action: 'new'
     end

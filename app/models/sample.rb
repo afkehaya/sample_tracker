@@ -19,9 +19,14 @@
 class Sample < ActiveRecord::Base
 	belongs_to :user
 	
-	def self.import(file, user_id)
-		CSV.foreach(file.path, headers: true) do |row|
-			Sample.create! row.to_hash
-		end
-	end
+def self.import(file, user_id)
+	
+    user = User.find_by(id: user_id)
+    if user
+      CSV.foreach(file.path, headers: true) do |row|
+        sample = user.samples.create! row.to_hash
+
+      end
+    end
+  end
 end
