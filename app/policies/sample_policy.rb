@@ -6,7 +6,9 @@ class SamplePolicy < ApplicationPolicy
 	def update?
 		user.present? 
 	end
-
+	def show?
+		return true if user.present? && user.admin?
+	end
 	def create?
 		return true if user.present? && user.admin?
 	end

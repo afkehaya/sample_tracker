@@ -1,78 +1,25 @@
  
 <% if user_signed_in? %>
 <%= render "home" %>
+  
 
-<div class="container">
-	 <div class="searchform">
-	  <%= search_form_for @q, html: {class: "form-inline search"} do |f| %>
-	  <%= f.search_field :line_or_season_or_style_or_color_or_to_who_cont, placeholder: "Search...", class: "form-control" %>
-	  <% end %>
-	 </div>
 
-  <div class="pull-right pagination-top">
-	  <%= will_paginate @samples, renderer: BootstrapPagination::Rails %>
-  </div>
-</div>
+ <% if policy(Sample).new? %>
 
-  <div class="container">
-    <% @samples.each do |sample| %>
+  
+   <%= render "mysample" %>
+ 
 
-              <div class="row sample"> 
-                
-                <div class="col-md-4">
-                  <strong>Line</strong>
-                  <%= sample.line %>
-                </div>
-          
-                <div class="col-md-4">
-                  <strong>Season</strong>
-                  <%= sample.season %>
-                </div>
-                <div class="col-md-4">
-                   <strong>Style</strong>
-                  <%= sample.style %>
-                </div>
-              </div>
-              <div class="row"> 
-                <div class="col-md-4">
-                   <strong>Color</strong>
-                  <%= sample.color%>
-                </div>
+<% else %>
+   
+   <%= render "index" %>
 
-                <div class="col-md-4">
-                   <strong>Date Out</strong>
-                  <%= sample.date_out %>
-                </div>
-             
-                <div class="col-md-4">
-                   <strong>To Who</strong>
-                  <%= sample.to_who %>
-                </div>
-              </div>
-              <div class="row"> 
-                <div class="col-md-4">
-                   <strong>Date In</strong>
-                  <%= sample.date_in %>
-                </div>
-                <div class="col-md-4">
-                   <strong>Location</strong>
-                  <%= sample.location %>
-                </div>
-
-                <div class="col-md-4 bottom">
-                 <%= link_to 'Check In | Out', edit_sample_path(sample), class: "btn btn-md btn-default"  %>
-                </div>
-              </div>
-        <% end %>
-	
-	<div class="pull-right">
-		<%= will_paginate @samples, renderer: BootstrapPagination::Rails %>
-	</div>
-</div>
+<%end%>
         
 <% else %>
 
 <%= render "home" %>
+
 <% end %>
 
 
