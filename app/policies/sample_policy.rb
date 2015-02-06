@@ -30,6 +30,10 @@ class SamplePolicy < ApplicationPolicy
 	def mysample?
 		return true if user.present? && user.admin? 
 	end
+	def viewall?
+		return true if user.present? && user.admin? 
+	end
+
 
 	private
 

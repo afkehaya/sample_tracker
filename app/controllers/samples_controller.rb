@@ -18,10 +18,12 @@ class SamplesController < ApplicationController
     authorize @samples
   end
 
-  def mysample
-    @samples = Sample.all
+  def viewall
+    @samples = Sample.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 10 )
     authorize @samples
   end
+
+
 
   def import
     @samples = Sample.all
