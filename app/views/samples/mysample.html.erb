@@ -1,67 +1,43 @@
- 
-
 <div class="container">
-	 <div class="searchform">
-	  <%= search_form_for @q, html: {class: "form-inline search"} do |f| %>
-	  <%= f.search_field :line_or_season_or_style_or_color_or_to_who_cont, placeholder: "Search...", class: "form-control" %>
-	  <% end %>
-	 </div>
-
-</div>
-
-   
- <div class="container">
 
     <% @samples.each do |sample| %>
-		<% if sample.user == current_user %>
-              <div class="row sample"> 
+<% if sample.user == current_user %>
+
+            <div class="row sample"> 
+              <div class="col-md-12">
+             <strong> Owner: <%= sample.user.name %></strong>
+              <p><strong>Email:</strong> <%= sample.user.email %> </p>
+             </div>
+           </div>
+
+    
+              <div class="row"> 
                
-                <div class="col-md-4">
-                  <strong>Line</strong>
-                  <%= sample.line %>
-                </div>
-            
-                <div class="col-md-4">
-                  <strong>Season</strong>
-                  <%= sample.season %>
-                </div>
-                <div class="col-md-4">
-                   <strong>Style</strong>
-                  <%= sample.style %>
-                </div>
-              </div>
-              <div class="row"> 
-                <div class="col-md-4">
-                   <strong>Color</strong>
-                  <%= sample.color%>
+               <div class="col-md-6">
+                  <p><strong>Season</strong>
+                  <%= sample.season %></p>
+                   <p><strong>Style</strong>
+                  <%= sample.style %></p>
+                    <p> <strong>Line</strong>
+                  <%= sample.line %></p>
                 </div>
 
-                <div class="col-md-4">
-                   <strong>Date Out</strong>
-                  <%= sample.date_out %>
-                </div>
-             
-                <div class="col-md-4">
-                   <strong>To Who</strong>
-                  <%= sample.to_who %>
-                </div>
-              </div>
-              <div class="row"> 
-                <div class="col-md-4">
-                   <strong>Date In</strong>
-                  <%= sample.date_in %>
-                </div>
-                <div class="col-md-4">
-                   <strong>Location</strong>
-                  <%= sample.location %>
+                <div class="col-md-6">
+                  <p><strong>Color</strong>
+                  <%= sample.color%></p>
+                  <p><strong>Borrowed By:</strong>
+                  <%= sample.to_who %></p>
                 </div>
 
-                <div class="col-md-4 bottom">
-                 <%= link_to 'Check In | Out', edit_sample_path(sample), class: "btn btn-md btn-default"  %>
+              </div>
+              <div class="row"> 
+
+                <div class="col-md-12 bottom">
+                 <%= link_to 'View Sample', sample, class: "btn btn-md btn-default"if policy(sample).show? %>
+                  <%= link_to 'Check In | Out', edit_sample_path(sample), class: "btn btn-md btn-default"  %>
                 </div>
               </div>
               <% end %>
-        	<% end %>
-         
+        <% end %> 
 
 </div>
