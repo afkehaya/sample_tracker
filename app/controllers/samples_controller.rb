@@ -60,7 +60,7 @@ class SamplesController < ApplicationController
 
   def update
     if @sample.update(sample_params)
-      redirect_to @sample, notice: 'Sample was successfully updated.'
+      redirect_to root_url, notice: 'Sample was successfully updated.'
     else
       render action: 'edit'
     end
