@@ -1,8 +1,10 @@
 <div class="container">
 
+  <h1> My Samples </h2>
+
     <% @samples.each do |sample| %>
 <% if sample.user == current_user %>
-
+ 
             <div class="row sample"> 
               <div class="col-md-12">
              <strong> Owner: <%= sample.user.name %></strong>
