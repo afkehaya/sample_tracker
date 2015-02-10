@@ -33,11 +33,11 @@
     <%= f.label :to_who, "Borrowed By" %>
     <%= f.text_field :to_who, class: "form-control" %>
   </div>
- 
+
    <div class="form-group">
     <%= f.label :location %>
     <%= f.text_field :location, class: "form-control" %>
-  </div>
+  
     <% @checkins.each do |checkin| %>
       <div class="checkbox">
         <%= check_box_tag "sample[checkin_ids][]", checkin.id %>
