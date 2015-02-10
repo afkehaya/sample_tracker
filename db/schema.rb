@@ -48,15 +48,13 @@ ActiveRecord::Schema.define(version: 20150210221044) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
-<<<<<<< HEAD
+
   create_table "checkins", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-=======
->>>>>>> b1619eed9f42c55498a10f5c0899d667e6c180ef
   create_table "in_outs", force: true do |t|
     t.string   "status"
     t.datetime "created_at"
