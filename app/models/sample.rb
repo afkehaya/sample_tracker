@@ -18,7 +18,8 @@
 
 class Sample < ActiveRecord::Base
 	belongs_to :user
-	
+	has_and_belongs_to_many :checkins
+  
 def self.import(file, user_id)
 	
     user = User.find_by(id: user_id)

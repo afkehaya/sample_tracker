@@ -40,6 +40,7 @@ class SamplesController < ApplicationController
 
   def new
     @sample = Sample.new
+    @checkins = Checkin.all
     respond_with(@sample)
     authorize @sample
   end
@@ -50,12 +51,19 @@ class SamplesController < ApplicationController
   def create
     params[:sample][:user_id] = current_user.id
     @sample = Sample.new(sample_params)
+    @sample.save
+    params[:sample][:checkin_ids].each do |checkin_id| 
+        @checkin = Checkin.find(checkin_id)
+        @sample.checkins << @checkin
+    end
+
     authorize @sample
     if @sample.save
       redirect_to mysample_url, notice: 'Sample was successfully created.'
     else
       render action: 'new'
     end
+
   end
 
   def update
