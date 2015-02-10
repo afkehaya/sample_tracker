@@ -28,21 +28,19 @@
     <%= f.text_field :color, class: "form-control" %>
   </div>
   <% end %>
-   <div class="form-group">
-    <%= f.label :date_out %>
-    <%= f.datetime_select :date_out, class: "form-control" %>
-  </div>
   <div class="form-group">
     <%= f.label :to_who, "Borrowed By" %>
     <%= f.text_field :to_who, class: "form-control" %>
   </div>
-  <div class="form-group">
-    <%= f.label :date_in, "Expected Date of Return" %>
-    <%= f.datetime_select :date_in, class: "form-control" %>
-  </div>
    <div class="form-group">
     <%= f.label :location %>
     <%= f.text_field :location, class: "form-control" %>
+    <% @inouts.each do |inout| %>
+      <div class="checkbox">
+        <%= check_box_tag "sample[inout_ids][]", in_out.id %>
+        <%= label_tag(inout.status) %>
+      </div>
+    <% end %> 
   </div>
   <div class="form-group">
     <%= f.submit "Check In | Out", class: "btn btn-lg btn-primary" %>
