@@ -13,6 +13,8 @@
 
 ActiveRecord::Schema.define(version: 20150210210807) do
 
+
+
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
     t.text     "body"
