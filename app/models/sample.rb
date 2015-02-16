@@ -17,8 +17,12 @@
 #
 
 class Sample < ActiveRecord::Base
+  acts_as_paranoid
 	belongs_to :user
 	
+  def user
+    User.unscoped { super }
+  end
 def self.import(file, user_id)
 	
     user = User.find_by(id: user_id)

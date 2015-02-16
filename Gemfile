@@ -21,6 +21,8 @@ gem 'jbuilder', '~> 2.0'
 
 # Bootstrap
 gem 'bootstrap-sass'
+# Soft Deletes
+gem "paranoia", "~> 2.0"
 
 gem 'annotate'
 # devise for users
