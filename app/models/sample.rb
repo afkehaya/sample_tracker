@@ -23,6 +23,7 @@ class Sample < ActiveRecord::Base
   def user
     User.unscoped { super }
   end
+  
 def self.import(file, user_id)
 	
     user = User.find_by(id: user_id)
